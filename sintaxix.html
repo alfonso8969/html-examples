@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo HTML</title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        color: #343a40;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        color: #007bff;
+      }
+      h2 {
+        color: #6c757d;
+        border: 2px solid #2ce93c;
+        padding: 10px;
+      }
+      p {
+        font-size: 1.2em;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      blockquote {
+        border-left: 5px solid #007bff;
+        padding-left: 20px;
+        margin: 20px 0;
+        color: #6c757d;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my webpage</h1>
+    <h2>Bienvenido a mi página web</h2>
+    <p>Este es un párrafo de ejemplo en mi página web.</p>
+    <img
+      class="img-fluid"
+      srcset="images/cachorro.jpg 300w, images/cachorro.jpg 600w"
+      src="images/cachorro.jpg"
+      alt="Un cachorro adorable"
+      sizes="(max-width: 600px) 400px, 400px"
+    />
+    <p>
+      Para más información, visita
+      <a href="https://alfonsogonz.es" target="_blank">este enlace</a>
+    </p>
+    <br />
+    <blockquote>Este es un bloque de cita en mi página web.</blockquote>
+    <br />
+    <p>Este es un párrafo adicional en mi página web.</p>
+    <mark>Este es un texto marcado en mi página web.</mark>
+    <p>
+      <strong>Este es un texto en negrita en mi página web.</strong>
+      <em>Este es un texto en cursiva en mi página web.</em>
+    </p>
+    <!-- Ejemplo incorrecto de anidación de etiquetas -->
+    <strong>
+      <em><p>Este es un texto en negrita y cursiva en mi página web.</p></em>
+    </strong>
+
+    <label for="fuel">Fuel level:</label>
+
+    <meter
+      id="fuel"
+      min="0"
+      max="100"
+      low="33"
+      high="66"
+      optimum="80"
+      value="80"
+    >
+      at 50/100
+    </meter>
+  </body>
+</html>
