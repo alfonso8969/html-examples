@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estructura Semántica</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
     <style>
       /* Estilos globales */
       body {
@@ -11,6 +15,13 @@
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 20px;
+        grid-template-rows: auto 1fr auto;
       }
 
       html {
@@ -29,6 +40,8 @@
         padding: 20px;
         background-color: #fff;
         border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 980px;
       }
 
       header {
@@ -100,11 +113,94 @@
         color: #23eef5;
         text-decoration: none;
       }
+
+      article {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border-bottom: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #content {
+        margin-bottom: 150px;
+      }
+
+      .ads-vertical {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      #sidebar {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #sidebar h3 {
+        margin-top: 0;
+      }
+
+      #sidebar a {
+        color: #248ae9;
+        text-decoration: none;
+      }
+
+      #sidebar a:hover {
+        text-decoration: underline;
+      }
+
+      .fa-facebook {
+        color: #3b5998;
+      }
+
+      .fa-twitter {
+        color: #1da1f2;
+      }
+
+      .fa-instagram {
+        color: #c32aa3;
+      }
+
+      .fa-youtube {
+        color: #ff0000;
+      }
+
+      .rs a {
+        color: #6563bb;
+        text-decoration: none;
+      }
+
+      .figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .figure-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .li {
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
     <!-- Cabecera con título y logo -->
-    <header> 
+    <header>
       <h1>Estructura Semántica en HTML</h1>
       <img
         src="images/casika_logo.png"
@@ -119,39 +215,303 @@
         <li><a href="#introduccion">Introducción</a></li>
         <li><a href="#secciones">Secciones</a></li>
         <li><a href="#conclusion">Conclusión</a></li>
+        <li><a href="#articles">Artículos</a></li>
       </ul>
     </nav>
     <!-- Contenido principal con secciones -->
-    <main>  
-      <section id="introduccion">
-        <h2>Introducción</h2>
-        <p>
-          La estructura semántica en HTML es fundamental para el desarrollo web
-          accesible y optimizado para motores de búsqueda.
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum maiores obcaecati voluptatibus ipsa labore perspiciatis dolor ab suscipit magnam, odit, ea quisquam voluptate? Illo praesentium itaque aliquam nemo assumenda modi vero veniam ducimus, enim ratione, consequatur ab placeat molestiae labore quidem dolorum iure deserunt, harum optio repudiandae! Dolor officia, cumque quo natus quibusdam aperiam quisquam commodi, veritatis aliquid consequatur, adipisci atque doloremque. Voluptatibus et nulla aliquam, explicabo fugiat eos nam optio voluptates asperiores eius ipsa maxime sint eum odit corporis illo! Corrupti iure labore atque, quae sunt, quasi architecto laboriosam fuga optio quibusdam sequi. Perferendis magni aspernatur nostrum explicabo earum est nam hic dolore reiciendis eos adipisci eveniet alias porro enim quaerat praesentium ducimus sit dolor in, rem doloribus velit ab sint recusandae. Amet rem ut eos, repellendus animi, molestias error dolorum cumque delectus sit veniam magni ipsum corrupti deleniti quisquam velit? Est obcaecati aliquam suscipit perferendis magni dolorum laborum doloribus, laboriosam temporibus fugiat dolorem quasi nulla sit veniam voluptatem velit rem consequuntur quidem ea officia tenetur id assumenda quam? Laborum voluptatem minima quod perspiciatis, provident minus, delectus cum unde sed a odit eos. Voluptatibus praesentium saepe illo obcaecati perspiciatis! Adipisci, a? Error fuga, eligendi consequatur quasi earum debitis.</p>
-      </section>
-      <section id="secciones">
-        <h2>Secciones</h2>
-        <p>
-          Las secciones en HTML5 permiten dividir el contenido de manera lógica
-          y semántica.
-        </p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit vitae voluptas praesentium ratione, facilis reprehenderit ipsa temporibus amet recusandae eum consequatur alias pariatur dolore consectetur saepe adipisci. Voluptatum dolores culpa eum cumque aut dicta nam mollitia repudiandae laboriosam, modi, labore dolorum quos, tempora numquam eligendi excepturi maxime corporis pariatur consequatur nulla necessitatibus vitae voluptate. Eos deserunt neque sunt beatae dignissimos ad, ipsam, aspernatur quia esse quibusdam saepe ullam aliquid impedit. Impedit, soluta reiciendis perspiciatis natus autem quod eligendi porro itaque? Ipsum numquam modi dolores, at fuga enim molestiae nam sapiente error laudantium dolorem dicta sed autem maiores recusandae, explicabo soluta debitis, reiciendis ullam facere ad velit? Sunt accusamus, ut cumque, ab quisquam ducimus aut reiciendis maxime sapiente dicta quam ea eos commodi tempora? Sed assumenda rerum minima deleniti exercitationem excepturi veritatis temporibus aspernatur architecto, deserunt fugiat alias nobis quae porro eaque asperiores dolor, debitis earum. Eligendi et accusantium ducimus. Omnis?</p>
-      </section>
-      <section id="conclusion">
-        <h2>Conclusión</h2>
-        <p>
-          Utilizar una estructura semántica adecuada mejora la accesibilidad y
-          el SEO de las páginas web.
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, numquam voluptates eveniet possimus debitis minus ratione corporis, totam maxime maiores ducimus facere itaque rem libero eum? Dolore fugit qui cumque aut id rerum dolorum officia, provident culpa, quam nobis mollitia eos voluptates iure animi molestiae omnis non inventore commodi! Corporis et harum, odit, ducimus quos sint omnis sapiente facere cupiditate dicta recusandae impedit odio illum laboriosam, perspiciatis expedita mollitia hic provident porro blanditiis maiores rem dolorem repudiandae? Nostrum, blanditiis sed unde alias earum delectus omnis perspiciatis voluptatem laudantium, maiores error itaque ratione numquam illum totam! Nulla nobis quam saepe at dicta vel voluptatum sapiente autem quis! Molestias accusantium fugit illo quis cum quasi, voluptates, porro necessitatibus ex omnis eligendi qui error quos laudantium dolor odio nesciunt, nobis amet? Iure, minus quisquam velit, eaque incidunt vero sapiente exercitationem maxime ratione qui porro alias distinctio, amet autem nulla dignissimos quis quae necessitatibus cumque dolores? Nihil aspernatur ipsum illum doloremque, ab sint illo iure eligendi reiciendis corrupti temporibus magni eos in vitae? Adipisci aliquam quaerat eos esse odio, voluptatum perspiciatis et illum ipsa non, quas sint nesciunt deleniti iure aut pariatur dolorem a autem doloremque expedita debitis eum? Aliquam repellendus illum reprehenderit accusantium.ut, perferendis similique sapiente dolores cumque, quo tenetur sit odit laboriosam asperiores iste at fugit natus error ea quae?</p>
-      </section>
+    <main>
+      <aside id="sidebar">
+        <h3>Categorías</h3>
+        <ul>
+          <li class="li"><a href="#">Cocinas</a></li>
+          <li class="li"><a href="#">Jardín</a></li>
+          <li class="li"><a href="#">Salones</a></li>
+          <li class="li"><a href="#">Dormitorios</a></li>
+          <li class="li"><a href="#">Baños</a></li>
+        </ul>
+      </aside>
+      <aside id="content">
+        <div>
+          <img
+            src="images/rebajas.jpg"
+            alt="rebajas"
+            width="100%"
+            height="200"
+          />
+        </div>
+        <section id="introduccion">
+          <h2>Introducción</h2>
+          <p>
+            La estructura semántica en HTML es fundamental para el desarrollo
+            web accesible y optimizado para motores de búsqueda.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum
+            maiores obcaecati voluptatibus ipsa labore perspiciatis dolor ab
+            suscipit magnam, odit, ea quisquam voluptate? Illo praesentium
+            itaque aliquam nemo assumenda modi vero veniam ducimus, enim
+            ratione, consequatur ab placeat molestiae labore quidem dolorum iure
+            deserunt, harum optio repudiandae! Dolor officia, cumque quo natus
+            quibusdam aperiam quisquam commodi, veritatis aliquid consequatur,
+            adipisci atque doloremque. Voluptatibus et nulla aliquam, explicabo
+            fugiat eos nam optio voluptates asperiores eius ipsa maxime sint eum
+            odit corporis illo! Corrupti iure labore atque, quae sunt, quasi
+            architecto laboriosam fuga optio quibusdam sequi. Perferendis magni
+            aspernatur nostrum explicabo earum est nam hic dolore reiciendis eos
+            adipisci eveniet alias porro enim quaerat praesentium ducimus sit
+            dolor in, rem doloribus velit ab sint recusandae. Amet rem ut eos,
+            repellendus animi, molestias error dolorum cumque delectus sit
+            veniam magni ipsum corrupti deleniti quisquam velit? Est obcaecati
+            aliquam suscipit perferendis magni dolorum laborum doloribus,
+            laboriosam temporibus fugiat dolorem quasi nulla sit veniam
+            voluptatem velit rem consequuntur quidem ea officia tenetur id
+            assumenda quam? Laborum voluptatem minima quod perspiciatis,
+            provident minus, delectus cum unde sed a odit eos. Voluptatibus
+            praesentium saepe illo obcaecati perspiciatis! Adipisci, a? Error
+            fuga, eligendi consequatur quasi earum debitis.
+          </p>
+        </section>
+        <section id="secciones">
+          <h2>Secciones</h2>
+          <p>
+            Las secciones en HTML5 permiten dividir el contenido de manera
+            lógica y semántica.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
+            vitae voluptas praesentium ratione, facilis reprehenderit ipsa
+            temporibus amet recusandae eum consequatur alias pariatur dolore
+            consectetur saepe adipisci. Voluptatum dolores culpa eum cumque aut
+            dicta nam mollitia repudiandae laboriosam, modi, labore dolorum
+            quos, tempora numquam eligendi excepturi maxime corporis pariatur
+            consequatur nulla necessitatibus vitae voluptate. Eos deserunt neque
+            sunt beatae dignissimos ad, ipsam, aspernatur quia esse quibusdam
+            saepe ullam aliquid impedit. Impedit, soluta reiciendis perspiciatis
+            natus autem quod eligendi porro itaque? Ipsum numquam modi dolores,
+            at fuga enim molestiae nam sapiente error laudantium dolorem dicta
+            sed autem maiores recusandae, explicabo soluta debitis, reiciendis
+            ullam facere ad velit? Sunt accusamus, ut cumque, ab quisquam
+            ducimus aut reiciendis maxime sapiente dicta quam ea eos commodi
+            tempora? Sed assumenda rerum minima deleniti exercitationem
+            excepturi veritatis temporibus aspernatur architecto, deserunt
+            fugiat alias nobis quae porro eaque asperiores dolor, debitis earum.
+            Eligendi et accusantium ducimus. Omnis?
+
+            <figure class="figure">
+              <img
+                class="figure-img float-start"
+                src="images/sofa-01.jpg"
+                alt="Imagen de un sofá"
+                width="250"
+                height="50%"
+              />
+              <figcaption>Imagen de un sofá</figcaption>
+            </figure>
+            <figure class="figure">
+              <img
+                class="figure-img float-end"
+                src="images/sofa-02.jpg"
+                alt="Imagen de un sofá"
+                width="250"
+                height="50%"
+              />
+              <figcaption>Imagen de un sofá</figcaption>
+            </figure>
+          </p>
+        </section>
+        <section id="conclusion">
+          <h2>Conclusión</h2>
+          <p>
+            Utilizar una estructura semántica adecuada mejora la accesibilidad y
+            el SEO de las páginas web.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            numquam voluptates eveniet possimus debitis minus ratione corporis,
+            totam maxime maiores ducimus facere itaque rem libero eum? Dolore
+            fugit qui cumque aut id rerum dolorum officia, provident culpa, quam
+            nobis mollitia eos voluptates iure animi molestiae omnis non
+            inventore commodi! Corporis et harum, odit, ducimus quos sint omnis
+            sapiente facere cupiditate dicta recusandae impedit odio illum
+            laboriosam, perspiciatis expedita mollitia hic provident porro
+            blanditiis maiores rem dolorem repudiandae? Nostrum, blanditiis sed
+            unde alias earum delectus omnis perspiciatis voluptatem laudantium,
+            maiores error itaque ratione numquam illum totam! Nulla nobis quam
+            saepe at dicta vel voluptatum sapiente autem quis! Molestias
+            accusantium fugit illo quis cum quasi, voluptates, porro
+            necessitatibus ex omnis eligendi qui error quos laudantium dolor
+            odio nesciunt, nobis amet? Iure, minus quisquam velit, eaque
+            incidunt vero sapiente exercitationem maxime ratione qui porro alias
+            distinctio, amet autem nulla dignissimos quis quae necessitatibus
+            cumque dolores? Nihil aspernatur ipsum illum doloremque, ab sint
+            illo iure eligendi reiciendis corrupti temporibus magni eos in
+            vitae? Adipisci aliquam quaerat eos esse odio, voluptatum
+            perspiciatis et illum ipsa non, quas sint nesciunt deleniti iure aut
+            pariatur dolorem a autem doloremque expedita debitis eum? Aliquam
+            repellendus illum reprehenderit accusantium.ut, perferendis
+            similique sapiente dolores cumque, quo tenetur sit odit laboriosam
+            asperiores iste at fugit natus error ea quae?
+          </p>
+          <figure>
+            <img
+              src="images/lampara-reciclado.jpg"
+              alt="Imagen de una lámpara reciclada"
+              class="figure-img float-end"
+              width="100%"
+              height="200"
+            />
+            <figcaption>Imagen de una lámpara reciclada</figcaption>
+          </figure>
+        </section>
+        <section id="articles">
+          <h2>Artículos Relacionados</h2>
+          <article>
+            <div class="row">
+              <div class="col-8 col-md-6">
+                <figure>
+                  <img
+                    src="images/house/1-100.png"
+                    alt="Casa 1"
+                    width="100%"
+                    height="200"
+                  />
+                  <figcaption>Casa 1</figcaption>
+                </figure>
+              </div>
+              <div class="col-4 col-md-6">
+                <h4>Título del Artículo</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                  debitis natus accusantium fugit omnis est adipisci consectetur
+                  exercitationem at magnam recusandae error quod deserunt fugiat
+                  quisquam mollitia animi, ut quo expedita ex corporis
+                  consequatur reiciendis a.
+                </p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="row">
+              <div class="col-8 col-md-6">
+                <figure>
+                  <img
+                    src="images/house/2-100.png"
+                    alt="Casa 2"
+                    width="100%"
+                    height="200"
+                  />
+                  <figcaption>Casa 2</figcaption>
+                </figure>
+              </div>
+              <div class="col-4 col-md-6">
+                <header class="d-block">
+                  <h4>Otro Artículo Interesante</h4>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </header>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perferendis quidem, sint perspiciatis eos id dolore rem
+                  laboriosam voluptatum, optio enim adipisci ut. Excepturi
+                  officia nesciunt alias laboriosam, nulla ipsum numquam
+                  corporis assumenda impedit molestiae at
+                </p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </aside>
+      <aside id="ads" class="ads-vertical">
+        <h3>Anuncios</h3>
+        <p>Aquí podrías insertar anuncios o enlaces patrocinados.</p>
+        <img
+          src="images/house/3-105.png"
+          alt="Anuncio"
+          width="100%"
+          height="200"
+        />
+      </aside>
     </main>
     <!-- Pie de página con información adicional -->
     <footer>
-      <p>alf8969&copy; 2023 Estructura Semántica</p>
-      <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer" >Visita Casika</a>
+      <p>alf8969&copy; <span id="year"></span> Estructura Semántica</p>
+      <div class="d-inline mx-0 rs">
+        <p>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <a
+            href="https://www.facebook.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Facebook</a
+          >
+        </p>
+        <p>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <a
+            href="https://twitter.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+        </p>
+        <p>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <a
+            href="https://www.instagram.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </p>
+        <p>
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+          <a
+            href="https://www.youtube.com/alf8969"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+        </p>
+      </div>
+      <address>
+        <strong>Contacto:</strong>
+        <p>
+          <a
+            href="mailto:contact@casika.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contact@casika.com</a
+          >
+        </p>
+        <p><strong>Teléfono:</strong> +57 312 345 6789</p>
+        <p><strong>Dirección:</strong> Calle 123, 456, Barrio 789</p>
+        <p>
+          <strong>Horario de atención:</strong> Lunes a Viernes 9:00 AM a 5:00
+          PM
+        </p>
+        <p><strong>Email de soporte técnico:</strong> support@casika.com</p>
+      </address>
+      <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer"
+        >Visita Casika
+        <img
+          src="images/casika_logo_cuadrado.png"
+          alt="Logo de Casika"
+          width="30"
+          height="30"
+          class="mx-1"
+        />
+      </a>
     </footer>
+    <script
+      src="https://kit.fontawesome.com/6fbdbd90cc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Obtener el año actual
+      const currentYear = new Date().getFullYear();
+      // Asignar el año al elemento con el id "year"
+      document.getElementById("year").textContent = currentYear;
+    </script>
   </body>
-</html>
+</html> 
