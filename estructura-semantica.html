@@ -90,12 +90,20 @@
         transition: color 0.3s ease;
       }
 
+      #content {
+        grid-column: 2 / 3;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
       footer {
         background-color: #333;
         color: #fff;
         text-align: center;
         padding: 10px;
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
         clear: both;
@@ -127,10 +135,6 @@
         height: auto;
       }
 
-      #content {
-        margin-bottom: 150px;
-      }
-
       .ads-vertical {
         background-color: #f8f9fa;
         padding: 15px;
@@ -140,6 +144,7 @@
       }
 
       #sidebar {
+        position: sticky;
         background-color: #f8f9fa;
         padding: 15px;
         border: 1px solid #ccc;
