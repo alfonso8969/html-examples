@@ -73,11 +73,13 @@
       nav ul {
         list-style-type: none;
         padding: 0;
+        justify-content: center;
       }
 
       nav li {
         display: inline-block;
         margin-right: 10px;
+        margin-top: 15px;
       }
 
       nav a {
@@ -88,6 +90,7 @@
       nav a:hover {
         text-decoration: underline;
         transition: color 0.3s ease;
+        color: #2414bb;
       }
 
       #content {
@@ -185,6 +188,12 @@
         text-decoration: none;
       }
 
+      .rs a:hover {
+        text-decoration: underline;
+        transition: color 0.3s ease;
+        color: #23eef5;
+      }
+
       .figure {
         display: flex;
         flex-direction: column;
@@ -198,8 +207,35 @@
         border-radius: 5px;
       }
 
-      .li {
+     .li .fa {
         margin-bottom: 10px;
+      }
+
+      ol {
+        list-style: none;
+        counter-reset: item;
+      }
+
+      ol li {
+        counter-increment: item;
+        margin-bottom: 5px;
+      }
+
+      ol li:before {
+        margin-right: 10px;
+        content: counter(item);
+        background: lightblue;
+        border-radius: 100%;
+        color: white;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+      }
+
+      ol li:hover {
+        background-color: #f0f0f0;
+        transition: background-color 0.3s ease;
+        background-color: #23eef5;
       }
     </style>
   </head>
@@ -227,13 +263,26 @@
     <main>
       <aside id="sidebar">
         <h3>Categorías</h3>
-        <ul>
-          <li class="li"><a href="#">Cocinas</a></li>
-          <li class="li"><a href="#">Jardín</a></li>
-          <li class="li"><a href="#">Salones</a></li>
-          <li class="li"><a href="#">Dormitorios</a></li>
-          <li class="li"><a href="#">Baños</a></li>
-        </ul>
+        <ol class="">
+          <li class="li">
+            <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+            <a href="#">Cocinas</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-leaf" aria-hidden="true"></i> <a href="#">Jardín</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-couch" aria-hidden="true"></i>
+            <a href="#">Salones</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-bed" aria-hidden="true"></i>
+            <a href="#">Dormitorios</a>
+          </li>
+          <li class="li">
+            <i class="fa fa-bath" aria-hidden="true"></i> <a href="#">Baños</a>
+          </li>
+        </ol>
       </aside>
       <aside id="content">
         <div>
@@ -301,28 +350,91 @@
             excepturi veritatis temporibus aspernatur architecto, deserunt
             fugiat alias nobis quae porro eaque asperiores dolor, debitis earum.
             Eligendi et accusantium ducimus. Omnis?
-
-            <figure class="figure">
-              <img
-                class="figure-img float-start"
-                src="images/sofa-01.jpg"
-                alt="Imagen de un sofá"
-                width="250"
-                height="50%"
-              />
-              <figcaption>Imagen de un sofá</figcaption>
-            </figure>
-            <figure class="figure">
-              <img
-                class="figure-img float-end"
-                src="images/sofa-02.jpg"
-                alt="Imagen de un sofá"
-                width="250"
-                height="50%"
-              />
-              <figcaption>Imagen de un sofá</figcaption>
-            </figure>
           </p>
+          <figure class="figure">
+            <img
+              class="figure-img float-start"
+              src="images/sofa-01.jpg"
+              alt="Imagen de un sofá"
+              width="250"
+              height="50%"
+            />
+            <figcaption>
+              Imagen de un sofá de
+              <strong>
+                <em>Feria del Mueble 2024</em>
+              </strong>
+            </figcaption>
+          </figure>
+          <figure class="figure">
+            <img
+              class="figure-img float-end"
+              src="images/sofa-02.jpg"
+              alt="Imagen de un sofá"
+              width="250"
+              height="50%"
+            />
+            <figcaption>
+              Imagen de un sofá de la feria de muebles:
+              <strong>
+                <em>Feria del Mueble 2025</em>
+              </strong>
+            </figcaption>
+          </figure>
+          <blockquote cite="https://www.casika.com" class="mt-3">
+            <h4>Lorem ipsum dolor sit amet.</h4>
+            <p>
+              "La estructura semántica en HTML5 es esencial para mejorar la
+              accesibilidad y el SEO de las páginas web."
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              molestias voluptatem odit enim modi non rem illum, dolore
+              consequuntur quidem fugit dolores vel adipisci minima!
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate itaque nulla officia dolore minus asperiores,
+              architecto iusto alias, ab possimus quos voluptates saepe quasi
+              dignissimos dolor? Deserunt velit soluta possimus, officia eos
+              in perspiciatis.
+            </p>
+            <p>
+              información extraída del libro
+              <cite>La casa de tus sueños</cite> El libro tiene un precio de
+              26€
+              <abbr
+                style="text-decoration: none"
+                title="Impuesto sobre el Valor Añadido"
+                >IVA</abbr
+              >
+              incluido.
+              <small
+                >(Descuento del 20% hasta el
+                <time datetime="2025-12-31">31 de diciembre de 2025</time
+                >)</small
+              >
+            </p>
+          </blockquote>
+          <details>
+            <summary>Biografía de la autora del libro</summary>
+            <p>
+              <strong>Nombre:</strong> Ana María Pérez
+            </p>
+            <img src="images/gesto-1.jpg" alt="Imagen de Ana María Pérez" width="200" height="200" />
+            <p class="mt-2">
+              <strong>Profesión:</strong> Arquitecta y diseñadora de interiores
+              <strong>Fecha de nacimiento:</strong> 15 de marzo de 1980
+            </p>
+            <p class="mt-2">
+              La autora del libro "La casa de tus sueños" es una reconocida
+              arquitecta y diseñadora de interiores con más de 20 años de
+              experiencia en el sector. Ha trabajado en numerosos proyectos
+              residenciales y comerciales, y su enfoque en la sostenibilidad y
+              el diseño funcional la ha llevado a recibir varios premios
+              prestigiosos.
+            </p>
+          </details>
         </section>
         <section id="conclusion">
           <h2>Conclusión</h2>
@@ -367,6 +479,13 @@
             />
             <figcaption>Imagen de una lámpara reciclada</figcaption>
           </figure>
+          <p lang="fr">
+            Persei dijo:
+            <q
+              >La lámpara reciclada es un ejemplo de cómo podemos reutilizar
+              materiales y reducir residuos.</q
+            >
+          </p>
         </section>
         <section id="articles">
           <h2>Artículos Relacionados</h2>
@@ -380,7 +499,7 @@
                     width="100%"
                     height="200"
                   />
-                  <figcaption>Casa 1</figcaption>
+                  <figcaption>Casa 1 de 220 m<sup>2</sup></figcaption>
                 </figure>
               </div>
               <div class="col-4 col-md-6">
@@ -406,7 +525,9 @@
                     width="100%"
                     height="200"
                   />
-                  <figcaption>Casa 2</figcaption>
+                  <figcaption>
+                    Casa <sub>2 plantas</sub> 320 m<sup>2</sup>
+                  </figcaption>
                 </figure>
               </div>
               <div class="col-4 col-md-6">
@@ -440,7 +561,13 @@
     </main>
     <!-- Pie de página con información adicional -->
     <footer>
-      <p>alf8969&copy; <span id="year"></span> Estructura Semántica</p>
+      <p>
+        alf8969&copy;
+        <time>
+          <time datetime="2025"> <span id="year"></span></time>
+        </time>
+        <i>Estructura Semántica</i>
+      </p>
       <div class="d-inline mx-0 rs">
         <p>
           <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -480,8 +607,9 @@
         </p>
       </div>
       <address>
-        <strong>Contacto:</strong>
         <p>
+          <strong><b>Correo:</b></strong>
+
           <a
             href="mailto:contact@casika.com"
             target="_blank"
@@ -489,13 +617,23 @@
             >contact@casika.com</a
           >
         </p>
-        <p><strong>Teléfono:</strong> +57 312 345 6789</p>
+        <p>
+          <strong
+            ><abbr style="text-decoration: none" title="Número de teléfono"
+              ><b>Tel.:</b>
+            </abbr></strong
+          >
+          <a href="tel:+573123456789">+57 312 345 6789</a>
+        </p>
         <p><strong>Dirección:</strong> Calle 123, 456, Barrio 789</p>
         <p>
           <strong>Horario de atención:</strong> Lunes a Viernes 9:00 AM a 5:00
           PM
         </p>
-        <p><strong>Email de soporte técnico:</strong> support@casika.com</p>
+        <p>
+          <strong>Email de soporte técnico:</strong>
+          <a href="mailto:support@casika.com">support@casika.com</a>
+        </p>
       </address>
       <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer"
         >Visita Casika
@@ -519,4 +657,4 @@
       document.getElementById("year").textContent = currentYear;
     </script>
   </body>
-</html> 
+</html>
