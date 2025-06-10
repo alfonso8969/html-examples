@@ -207,7 +207,14 @@
         border-radius: 5px;
       }
 
-     .li .fa {
+      .figure-caption {
+        width: max-content;
+        text-align: center;
+        margin-top: 10px;
+        font-style: italic;
+      }
+
+      .li .fa {
         margin-bottom: 10px;
       }
 
@@ -236,13 +243,39 @@
         background-color: #f0f0f0;
         transition: background-color 0.3s ease;
         background-color: #23eef5;
+        margin: 4rem 0;
+      }
+
+      .cajas-muebles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+      }
+
+      .cajas-muebles > div {
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .cajas-muebles p {
+        margin-top: 20px;
+       
+      }
+
+      .highlight {
+        color: #007bff;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
     <!-- Cabecera con título y logo -->
     <header>
-      <h1>Estructura Semántica en HTML</h1>
+      <h1>Estructura Semántica en <span class="highlight">HTML</span></h1>
       <img
         src="images/casika_logo.png"
         alt="Logo de Casika"
@@ -351,36 +384,72 @@
             fugiat alias nobis quae porro eaque asperiores dolor, debitis earum.
             Eligendi et accusantium ducimus. Omnis?
           </p>
-          <figure class="figure">
-            <img
-              class="figure-img float-start"
-              src="images/sofa-01.jpg"
-              alt="Imagen de un sofá"
-              width="250"
-              height="50%"
-            />
-            <figcaption>
-              Imagen de un sofá de
-              <strong>
-                <em>Feria del Mueble 2024</em>
-              </strong>
-            </figcaption>
-          </figure>
-          <figure class="figure">
-            <img
-              class="figure-img float-end"
-              src="images/sofa-02.jpg"
-              alt="Imagen de un sofá"
-              width="250"
-              height="50%"
-            />
-            <figcaption>
-              Imagen de un sofá de la feria de muebles:
-              <strong>
-                <em>Feria del Mueble 2025</em>
-              </strong>
-            </figcaption>
-          </figure>
+          <div class="cajas-muebles">
+            <div>
+              <figure class="figure">
+                <img
+                  class="figure-img"
+                  src="images/sofa-01.jpg"
+                  alt="Imagen de un sofá verde con diversos complementos a su alrededor"
+                  loading="lazy"
+                  decoding="async"
+                  srcset="images/sofa-01.jpg 300w, images/sofa-01.jpg 600w"
+                  sizes="(max-width: 600px) 400px, 400px"
+                  class="img-fluid"
+                  style="max-width: 100%; height: auto;"
+                  title="Sofá ganador de la Feria del Mueble 2024"
+                  width="250"
+                  height="50%"
+                />
+                <figcaption class="figure-caption">
+                  Imagen de un sofá de
+                  <strong>
+                    <em>Feria del Mueble 2024</em>
+                  </strong>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <p>Descripción del sofá de la Feria del Mueble 2024.</p>
+              <p>
+                Este sofá combina estilo y comodidad, con un diseño moderno y
+                materiales de alta calidad.
+              </p>
+            </div>
+          </div>
+
+          <div class="cajas-muebles">
+            <div>
+              <figure class="figure">
+                <img
+                  class="figure-img"
+                  srcset="images/sofa-02.jpg 300w, images/sofa-02.jpg 600w"
+                  sizes="(max-width: 600px) 400px, 400px"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                  title="Sofá segundo finalista de la Feria del Mueble 2025"
+                  src="images/sofa-02.jpg"
+                  alt="Imagen de un sofá rojo con diversos complementos a su alrededor"
+                  width="250"
+                  height="50%"
+                />
+                <figcaption class="figure-caption">
+                  Imagen de un sofá de la feria de muebles:
+                  <strong>
+                    <em>Feria del Mueble 2025</em>
+                  </strong>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <p>Descripción del sofá de la Feria del Mueble 2025.</p>
+              <p>
+                Este sofá destaca por su diseño ergonómico y su tapicería de
+                alta calidad, ideal para cualquier salón moderno.
+              </p>
+            </div>
+          </div>
           <blockquote cite="https://www.casika.com" class="mt-3">
             <h4>Lorem ipsum dolor sit amet.</h4>
             <p>
@@ -394,15 +463,14 @@
             </p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate itaque nulla officia dolore minus asperiores,
-              architecto iusto alias, ab possimus quos voluptates saepe quasi
-              dignissimos dolor? Deserunt velit soluta possimus, officia eos
-              in perspiciatis.
+              Voluptate itaque nulla officia dolore minus asperiores, architecto
+              iusto alias, ab possimus quos voluptates saepe quasi dignissimos
+              dolor? Deserunt velit soluta possimus, officia eos in
+              perspiciatis.
             </p>
             <p>
               información extraída del libro
-              <cite>La casa de tus sueños</cite> El libro tiene un precio de
-              26€
+              <cite>La casa de tus sueños</cite> El libro tiene un precio de 26€
               <abbr
                 style="text-decoration: none"
                 title="Impuesto sobre el Valor Añadido"
@@ -418,10 +486,13 @@
           </blockquote>
           <details>
             <summary>Biografía de la autora del libro</summary>
-            <p>
-              <strong>Nombre:</strong> Ana María Pérez
-            </p>
-            <img src="images/gesto-1.jpg" alt="Imagen de Ana María Pérez" width="200" height="200" />
+            <p><strong>Nombre:</strong> Ana María Pérez</p>
+            <img
+              src="images/gesto-1.jpg"
+              alt="Imagen de Ana María Pérez"
+              width="200"
+              height="200"
+            />
             <p class="mt-2">
               <strong>Profesión:</strong> Arquitecta y diseñadora de interiores
               <strong>Fecha de nacimiento:</strong> 15 de marzo de 1980
