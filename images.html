@@ -3,32 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/logo-alf.ico" type="image/x-icon">
     <title>Pruebas con imágenes</title>
-    <style>
-        .svg {
-            width: 300px;
-            height: auto;
-        }
+    <link rel="stylesheet" href="styles/style.css">
 
-        .svg-icon {
-            display: inline-block;
-            width: 30px;
-            height: auto;
-            fill: #e91212;
-        }
-
-        .svg-icon:hover {
-            color: #f7b289;
-            cursor: pointer;
-        }
-
-        .icon-title {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>Pruebas con imágenes</h1>
@@ -637,5 +615,44 @@
         </svg>
         Temporizador
     </h3>
+
+    
+    <div class="container">
+      <h2>Workplace </h2>
+      <h3>Image-map Computer, Phone, Coffee</h3>
+      <p>Haz clic en la imagen para ir a la página correspondiente.</p>
+      <img
+        src="images/workplace.jpg"
+        alt="Workplace"
+        usemap="#workmap"
+        width="400"
+        height="379"
+        draggable="false"
+      />
+
+      <map name="workmap">
+        <area
+          shape="rect"
+          coords="34,44,270,350"
+          alt="Computer"
+          href="pages/computer.html"
+          title="Computer"
+        />
+        <area
+          shape="rect"
+          coords="290,172,333,250"
+          alt="Phone"
+          href="pages/phone.html"
+          title="Phone"
+        />
+        <area
+          shape="circle"
+          coords="337,300,44"
+          alt="Cup of coffee"
+          href="pages/coffee.html"
+          title="Cup of coffee"
+        />
+      </map>
+    </div>
 </body>
 </html>  
