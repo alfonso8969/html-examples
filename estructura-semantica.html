@@ -388,15 +388,9 @@
             <div>
               <figure class="figure">
                 <img
-                  class="figure-img"
+                  loading="lazy"
                   src="images/sofa-01.jpg"
                   alt="Imagen de un sofá verde con diversos complementos a su alrededor"
-                  loading="lazy"
-                  decoding="async"
-                  srcset="images/sofa-01.jpg 300w, images/sofa-01.jpg 600w"
-                  sizes="(max-width: 600px) 400px, 400px"
-                  class="img-fluid"
-                  style="max-width: 100%; height: auto;"
                   title="Sofá ganador de la Feria del Mueble 2024"
                   width="250"
                   height="50%"
@@ -422,12 +416,6 @@
             <div>
               <figure class="figure">
                 <img
-                  class="figure-img"
-                  srcset="images/sofa-02.jpg 300w, images/sofa-02.jpg 600w"
-                  sizes="(max-width: 600px) 400px, 400px"
-                  loading="lazy"
-                  decoding="async"
-                  class="img-fluid"
                   title="Sofá segundo finalista de la Feria del Mueble 2025"
                   src="images/sofa-02.jpg"
                   alt="Imagen de un sofá rojo con diversos complementos a su alrededor"
@@ -723,7 +711,7 @@
     ></script>
     <script>
       // Obtener el año actual
-      const currentYear = new Date().getFullYear();
+      const currentYear = new Date().getFullYear(); 
       // Asignar el año al elemento con el id "year"
       document.getElementById("year").textContent = currentYear;
     </script>
