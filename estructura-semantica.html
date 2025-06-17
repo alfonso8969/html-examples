@@ -125,6 +125,11 @@
         text-decoration: none;
       }
 
+      footer i {
+        margin-right: 5px;
+        font-size: 18px;
+      }
+
       article {
         margin-bottom: 20px;
         padding: 15px;
@@ -181,6 +186,30 @@
 
       .fa-youtube {
         color: #ff0000;
+      }
+
+      .fa-envelope {
+        color: #007bff;
+      }
+
+      .fa-phone {
+        color: #28a745;
+      }
+
+      .fa-globe {
+        color: #6f42c1;
+      }
+
+      .fa-map-marker {
+        color: #71a1d4;
+      }
+
+      .fa-clock-o {
+        color: #ffc107;
+      }
+
+      .fa-support {
+        color: #17a2b8;
       }
 
       .rs a {
@@ -243,7 +272,6 @@
         background-color: #f0f0f0;
         transition: background-color 0.3s ease;
         background-color: #23eef5;
-        margin: 4rem 0;
       }
 
       .cajas-muebles {
@@ -262,8 +290,7 @@
       }
       
       .cajas-muebles p {
-        margin-top: 20px;
-       
+        margin-top: 20px;       
       }
 
       .highlight {
@@ -671,16 +698,15 @@
       </div>
       <address>
         <p>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
           <strong><b>Correo:</b></strong>
-
           <a
             href="mailto:contact@casika.com"
-            target="_blank"
-            rel="noopener noreferrer"
             >contact@casika.com</a
           >
         </p>
         <p>
+          <i class="fa fa-phone" aria-hidden="true"></i>
           <strong
             ><abbr title="Número de teléfono"
               ><b>Tel.:</b>
@@ -688,26 +714,33 @@
           >
           <a href="tel:+573123456789">+57 312 345 6789</a>
         </p>
-        <p><strong>Dirección:</strong> Calle 123, 456, Barrio 789</p>
         <p>
-          <strong>Horario de atención:</strong> Lunes a Viernes 9:00 AM a 5:00
-          PM
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <strong>Dirección:</strong> <em>Calle 123, 456, Barrio 789</em>
         </p>
         <p>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <strong>Horario de atención:</strong> <em>Lunes a Viernes 9:00 AM a 5:00 PM</em>
+        </p>
+        <p>
+          <i class="fa fa-support" aria-hidden="true"></i>
           <strong>Email de soporte técnico:</strong>
           <a href="mailto:support@casika.com">support@casika.com</a>
         </p>
       </address>
-      <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer"
-        >Visita Casika
-        <img
-          src="images/casika_logo_cuadrado.png"
-          alt="Logo de Casika"
-          width="30"
-          height="30"
-          class="mx-1"
-        />
-      </a>
+      <p>
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <a href="https://www.casika.com" target="_blank" rel="noopener noreferrer"
+          >Visita Casika
+          <img
+            src="images/casika_logo_cuadrado.png"
+            alt="Logo de Casika"
+            width="30"
+            height="30"
+            class="mx-1"
+          />
+        </a>
+      </p>
     </footer>
     <script
       src="https://kit.fontawesome.com/6fbdbd90cc.js"
