@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" content="Alfonso J. Gonzalez" />
+    <meta name="language" content="es-ES" />
+    <meta
+      name="keywords"
+      content="audio, player, reproducción, sintonía, HTML"
+    />
+    <meta name="author" content="Alfonso J. Gonzalez" />
+    <meta
+      name="description"
+      content="Reproduce tu audio favorito con la etiqueta audio en HTML."
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Audio - Audio Player</title>
+  </head>
+  <body>
+    <h1>Audio Player</h1>
+    <p>Reproduce tu audio favorito:</p>
+    <p>
+      La etiqueta <code>&lt;audio&gt;</code> se utiliza para incrustar contenido
+      de audio en una página web.
+    </p>
+    <p>
+      Puedes utilizar los controles de reproducción para detener, pausar, o
+      avanzar el audio.
+    </p>
+    <audio src="audio/rne-aceite.wav" controls></audio>
+    <h2>Reproducción de audio varios archivos</h2>
+    <p>
+      Si tu navegador no soporta la etiqueta de audio, puedes descargar el
+      audio en mp3 y ogg.
+    </p>
+    <audio
+      id="sintonia-audio"
+      controls
+    >
+      <source src="audio/sintonia.mp3" type="audio/mpeg" />
+      <source src="audio/sintonia.ogg" type="audio/ogg" />
+      Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <h2>Reproducción de audio con música en un dialog</h2>
+    <dialog>
+      <h2>Reproducción de audio</h2>
+      <p>Esta página muestra un audio player.</p>
+      <p>
+        Puedes utilizar los controles de reproducción para detener, pausar, o
+        avanzar el audio.
+      </p>
+      <p>
+        Si tu navegador no soporta la etiqueta de audio, puedes descargar el
+        audio en mp3 y ogg.
+      </p>
+      <audio controls>
+        <source src="audio/ciencia-cerebro.mp3" type="audio/mp3" />
+        <source src="audio/ciencia-cerebro.ogg" type="audio/ogg" />
+        Tu navegador no soporta la etiqueta de audio.
+      </audio>
+      <form method="dialog">
+        <button class="close-button" onclick="this.closest('dialog').close()">
+          <i class="fas fa-times"></i>
+          Cerrar
+        </button>
+      </form>
+    </dialog>
+    <button
+      class="show-dialog-button"
+      onclick="document.querySelector('dialog').showModal()"
+    >
+      Mostrar diálogo
+    </button>
+    <script
+      src="https://kit.fontawesome.com/6fbdbd90cc.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

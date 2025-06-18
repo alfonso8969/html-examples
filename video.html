@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Ejemplo de uso de la etiqueta video en HTML con atributos y eventos."
+    />
+    <meta name="keywords" content="HTML, video, etiqueta, atributos, eventos" />
+    <meta name="author" content="Tu Nombre" />
+    <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Video - Etiqueta y atributos</title>
+  </head>
+  <body>
+    <h1>Etiqueta de Video</h1>
+    <p>
+      La etiqueta <code>&lt;video&gt;</code> se utiliza para incrustar contenido
+      de video en una página web.
+    </p>
+    <video
+      id="tesla-video"
+      controls
+      width="640"
+      height="360"
+      poster="images/poster-tesla.jpg"
+      onplay="console.log('El video ha comenzado a reproducirse');"
+      onpause="console.log('El video ha sido pausado');"
+      onended="console.log('El video ha terminado de reproducirse');"
+    >
+      <source src="video/tesla.mp4" type="video/mp4" />
+      <source src="video/tesla.ogv" type="video/ogg" />
+      <source src="video/tesla.webm" type="video/webm" />
+      <p>Tu navegador no soporta el formato MP4.</p>
+    </video>
+
+    <dialog id="video-dialog">
+      <h2>Diálogo de Video</h2>
+      <p class="video-dialog-content">
+        Este es un diálogo que se puede mostrar al interactuar con el video.
+      </p>
+      <form method="dialog">
+        <button
+          class="close-button"
+          onclick="document.getElementById('video-dialog').close()"
+        >
+          <i class="fas fa-times"></i>
+          Cerrar
+        </button>
+      </form>
+    </dialog>
+    <button
+      class="show-dialog-button"
+      onclick="document.getElementById('video-dialog').showModal()"
+    >
+      Mostrar diálogo
+    </button>
+    <script
+      src="https://kit.fontawesome.com/6fbdbd90cc.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
