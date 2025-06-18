@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
       content="Ejemplo de uso de la etiqueta video en HTML con atributos y eventos."
@@ -11,15 +10,15 @@
     <meta name="keywords" content="HTML, video, etiqueta, atributos, eventos" />
     <meta name="author" content="Tu Nombre" />
     <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="styles/style.css" />
     <title>Video - Etiqueta y atributos</title>
   </head>
   <body>
     <h1>Etiqueta de Video</h1>
     <p>
-      La etiqueta <code>&lt;video&gt;</code> se utiliza para incrustar contenido
-      de video en una página web.
+      La etiqueta
+      <code>&lt;video&gt;</code>
+      se utiliza para incrustar contenido de video en una página web.
     </p>
     <video
       id="tesla-video"
@@ -36,16 +35,27 @@
       <source src="video/tesla.webm" type="video/webm" />
       <p>Tu navegador no soporta el formato MP4.</p>
     </video>
-
     <dialog id="video-dialog">
       <h2>Diálogo de Video</h2>
       <p class="video-dialog-content">
         Este es un diálogo que se puede mostrar al interactuar con el video.
       </p>
+      <video
+        id="lego-video"
+        controls
+        autoplay
+        preload="auto"
+        onplay="console.log('El video ha comenzado a reproducirse');"
+        onpause="console.log('El video ha sido pausado');"
+        onended="console.log('El video ha terminado de reproducirse');"
+        src="video/lego-wedo.mp4"
+      >
+      </video>
       <form method="dialog">
         <button
+          type="submit"
           class="close-button"
-          onclick="document.getElementById('video-dialog').close()"
+          onclick="document.getElementById('video-dialog').close(); document.getElementById('lego-video').pause();"
         >
           <i class="fas fa-times"></i>
           Cerrar
@@ -53,6 +63,7 @@
       </form>
     </dialog>
     <button
+      type="button"
       class="show-dialog-button"
       onclick="document.getElementById('video-dialog').showModal()"
     >
