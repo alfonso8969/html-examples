@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
       content="Ejemplo de uso de la etiqueta video en HTML con atributos y eventos."
@@ -11,15 +10,15 @@
     <meta name="keywords" content="HTML, video, etiqueta, atributos, eventos" />
     <meta name="author" content="Tu Nombre" />
     <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="styles/style.css" />
     <title>Video - Etiqueta y atributos</title>
   </head>
   <body class="video-page">
     <h1>Etiqueta de Video</h1>
     <p>
-      La etiqueta <code>&lt;video&gt;</code> se utiliza para incrustar contenido
-      de video en una página web.
+      La etiqueta
+      <code>&lt;video&gt;</code>
+      se utiliza para incrustar contenido de video en una página web.
     </p>
     <video
       class="video"
@@ -56,6 +55,7 @@
       <video id="video-dialog-content" class="video" src="video/lego-wedo.mp4" controls width="640" height="360"></video>
       <form method="dialog">
         <button
+          type="submit"
           class="close-button"
           onclick="document.getElementById('video-dialog').close(); document.getElementById('video-dialog-content').pause();"
         >
@@ -65,6 +65,7 @@
       </form>
     </dialog>
     <button
+      type="button"
       class="show-dialog-button"
       onclick="document.getElementById('video-dialog').showModal()"
     >

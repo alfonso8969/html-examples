@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
-    <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index, follow" />
     <meta name="copyright" content="Alfonso J. Gonzalez" />
     <meta name="language" content="es-ES" />
@@ -19,6 +16,8 @@
       name="description"
       content="Reproduce tu audio favorito con la etiqueta audio en HTML."
     />
+    <link rel="icon" href="images/logo-alf.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="styles/style.css" />
     <title>Audio - Audio Player</title>
   </head>
@@ -73,7 +72,7 @@
         Tu navegador no soporta la etiqueta de audio.
       </audio>
       <form method="dialog">
-        <button class="close-button" onclick="this.closest('dialog').close()">
+        <button type="button"" class="close-button" onclick="this.closest('dialog').close()">
           <i class="fas fa-times"></i>
           Cerrar
         </button>
