@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Video - Etiqueta y atributos</title>
   </head>
-  <body>
+  <body class="video-page">
     <h1>Etiqueta de Video</h1>
     <p>
       La etiqueta <code>&lt;video&gt;</code> se utiliza para incrustar contenido
       de video en una página web.
     </p>
     <video
-      id="tesla-video"
+      class="video"
       controls
       width="640"
       height="360"
@@ -37,15 +37,27 @@
       <p>Tu navegador no soporta el formato MP4.</p>
     </video>
 
+    <h2>Atributos de Video</h2>
+    <p>
+      Puedes utilizar los siguientes atributos para personalizar el video:
+    </p>
+    <video class="video" src="video/sony-nex7.mp4" controls width="640" height="360"></video>
+
+
     <dialog id="video-dialog">
       <h2>Diálogo de Video</h2>
       <p class="video-dialog-content">
         Este es un diálogo que se puede mostrar al interactuar con el video.
       </p>
+      <p>
+        Puedes utilizar los controles de reproducción para detener, pausar, o
+        avanzar el video.
+      </p>
+      <video id="video-dialog-content" class="video" src="video/lego-wedo.mp4" controls width="640" height="360"></video>
       <form method="dialog">
         <button
           class="close-button"
-          onclick="document.getElementById('video-dialog').close()"
+          onclick="document.getElementById('video-dialog').close(); document.getElementById('video-dialog-content').pause();"
         >
           <i class="fas fa-times"></i>
           Cerrar
