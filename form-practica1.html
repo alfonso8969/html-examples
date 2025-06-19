@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario - Práctica 1</title>
+        <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      .form-container {
+        width: 700px;
+        min-height: 450px;
+        margin: auto;
+        background: rgb(93, 138, 221);
+        padding: 2rem;
+        align-content: center;
+        text-align: center;
+      }
+
+      form {
+        margin: 30px auto;
+        background-color: #a1a5a7;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: flex !important;
+        justify-content: inherit;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-left: 168px;
+      }
+
+      .form-group input {
+        width: 50%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      .form-group input[type="submit"] {
+        width: auto;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .note {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+        font: italic 0.6em Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .req {
+        color: red;
+        margin-left: 2px;
+      }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>Formulario de Contacto Empresa</h1>
+            <form action="process_form.php" method="GET">
+                <p class="note">
+                    Los campos marcados con
+                    <span class="req">*</span>
+                    son obligatorios.
+                </p>
+                <div class="form-group">
+                    <label for="name">Nombre Solicitante
+                        <span class="req">*</span>
+                    </label
+          >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        autocomplete="off"
+                        placeholder="Ingrese su nombre completo"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="company-name">Nombre Empresa
+                        <span class="req">*</span>
+                    </label
+          >
+                    <input
+                        type="text"
+                        id="company-name"
+                        name="company-name"
+                        required
+                        placeholder="Ingrese el nombre de su empresa"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico
+                        <span class="req">*</span>
+                    </label
+          >
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="Ingrese su correo electrónico"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="(?:[+]?(?:[0-9]{1,5}|\\x28[0-9]{1,5}\\x29)[ ]?)?[0-9]{2}(?:[0-9][ ]?){6}[0-9]"
+                        title="Formato: solo números, con o sin código de país. Ejemplo: +34 123 456 789"
+                        placeholder="Ingrese su número de teléfono"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="url">Sitio Web</label>
+                    <input
+                        type="url"
+                        id="url"
+                        name="url"
+                        placeholder="Ingrese la URL de su sitio web"
+                    >
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
