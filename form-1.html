@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formularios - Ejercicio 1</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios - Ejercicio 1</title>
+        <style>
       body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -23,7 +23,7 @@
       }
 
       .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 45px;
       }
 
       .form-group label {
@@ -54,141 +54,445 @@
       .password-container input {
         width: 100%;
       }
-    </style>
-  </head>
-  <body>
-    <h1>Formulario de Registro</h1>
-    <form action="process.php" method="get">
-      <div class="form-group">
-        <label for="first-name">Nombre:</label>
-        <input
-          type="text"
-          id="first-name"
-          name="first-name"
-          placeholder="Ingrese su nombre"
-          autocomplete="off"
-          pattern="[A-Za-z\sáéíóúÁÉÍÓÚñÑ]{1,15}"
-          required
-        />
-      </div>
 
-      <div class="form-group">
-        <label for="email">Correo Electrónico:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Ingrese su correo electrónico"
-          required
-        />
-      </div>
+      .error {
+        color: red;
+      }
 
-      <div class="form-group">
-        <label for="dni">DNI:</label>
-        <input
-          type="text"
-          id="dni"
-          name="dni"
-          placeholder="Ingrese su DNI"
-          required
-          pattern="[0-9]{8}[A-Za-z]"
-        />
-      </div>
+      .error-required-message {
+        display: none;
+        position: absolute;
+        font-size: .9rem;
+        font-style: italic;
+      }
 
-      <div class="form-group">
-        <label for="age">Edad:</label>
-        <input
-          max="125"
-          min="18"
-          minlength="1"
-          maxlength="3"
-          title="Solo se permiten números de 1 a 3 dígitos"
-          pattern="[0-9]{1,3}"
-          type="number"
-          id="age"
-          name="age"
-          placeholder="Ingrese su edad"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="phone">Teléfono:</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          title="Solo se permiten números y el formato es 9 dígitos, opcionalmente + código de país"
-          placeholder="Ingrese su número de teléfono"
-          pattern="(?:[+]?(?:[0-9]{1,5}|\\x28[0-9]{1,5}\\x29)[ ]?)?[0-9]{2}(?:[0-9][ ]?){6}[0-9]"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Enviar" />
-      </div>
-    </form>
+      .error-pattern-message {
+        display: none;
+        position: absolute;
+        font-size: .9rem;
+        font-style: italic;
+      }
 
-    <h1>Formulario de Login</h1>
-    <form action="login.php" method="post">
-      <div class="form-group">
-        <label for="username">Usuario:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Ingrese su usuario"
-          required
-          pattern="[A-Za-z0-9]{1,15}"
-        />
-      </div>
+      .mt-60 {
+        margin-top: 60px;
+      }
 
-      <div class="form-group">
-        <label for="password">Contraseña:</label>
-        <div class="password-container">
-          <span
-            id="togglePassword"
-            style="
+      .range-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .range-value {
+        display: inline-block;
+        margin-left: 10px;
+        font-weight: bold;
+      }
+
+      #searchSubmit {
+        padding: 10px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .terms {
+        position: relative;
+      }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario de Registro</h1>
+        <form action="process.php" method="get">
+            <div class="form-group">
+                <label for="first-name">Nombre:</label>
+                <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    placeholder="Ingrese su nombre"
+                    autocomplete="off"
+                    pattern="[A-Za-z\sáéíóúÁÉÍÓÚñÑ]{1,15}"
+                    required
+                >
+                <div class="error">
+                    <div class="error-pattern-message">El nombre solo puede contener letras y espacios, con un máximo de 15 caracteres.</div>
+                    <div class="error-required-message">Este campo es obligatorio.</div>
+                    <div class="error-pattern-message">El nombre solo puede contener letras y espacios, con un máximo de 15 caracteres.</div>
+                    <div class="custom-error"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Ingrese su correo electrónico"
+                    required
+                >
+                <div class="error">
+                    <div class="error-required-message">Este campo es obligatorio.</div>
+                    <div class="error-pattern-message">El correo electrónico no es válido.</div>
+                    <div class="custom-error"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input
+                    type="text"
+                    id="dni"
+                    name="dni"
+                    placeholder="Ingrese su DNI"
+                    required
+                    pattern="[0-9]{8}[A-Za-z]"
+                >
+                <div class="error">
+                    <div class="error-required-message">Este campo es obligatorio.</div>
+                    <div class="error-pattern-message">El DNI debe tener 8 dígitos y un carácter alfabético como letra.</div>
+                    <div class="custom-error"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Edad:</label>
+                <input
+                    max="125"
+                    min="18"
+                    minlength="1"
+                    maxlength="3"
+                    title="Solo se permiten números de 1 a 3 dígitos"
+                    pattern="[0-9]{1,3}"
+                    type="number"
+                    id="age"
+                    name="age"
+                    placeholder="Ingrese su edad"
+                    required
+                >
+                <div class="error">
+                    <div class="error-required-message">Este campo es obligatorio.</div>
+                    <div class="error-pattern-message">La edad debe ser un número entre 18 y 125.</div>
+                    <div class="custom-error"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    title="Solo se permiten números y el formato es 9 dígitos, opcionalmente + código de país"
+                    placeholder="Ingrese su número de teléfono"
+                    pattern="(?:[+]?(?:[0-9]{1,5}|\\x28[0-9]{1,5}\\x29)[ ]?)?[0-9]{2}(?:[0-9][ ]?){6}[0-9]"
+                    required
+                >
+                <div class="error">
+                    <div class="error-required-message">Este campo es obligatorio.</div>
+                    <div class="error-pattern-message">El teléfono debe tener 9 dígitos, opcionalmente con un código de país.</div>
+                    <div class="custom-error"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h1>Formulario de Login</h1>
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Ingrese su usuario"
+                    required
+                    pattern="[A-Za-z0-9]{1,15}"
+                >
+                <div class="error">
+                    <p class="error-required-message">El usuario es obligatorio.</p>
+                    <p class="error-pattern-message">El usuario solo puede contener letras y números.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <div class="password-container">
+                    <span id="togglePassword" style="
               position: absolute;
               right: 10px;
               top: 50%;
               transform: translateY(-50%);
               cursor: pointer;
-            "
-          >
-            <i id="eyeOpen" class="fa fa-eye" style="display: none"></i>
-            <i id="eyeClosed" class="fa fa-eye-slash"></i>
-          </span>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Ingrese su contraseña"
-            required
-            minlength="6"
-          />
-        </div>
-      </div>
+            ">
+                        <div class="toggle-password">
+                            <i id="eyeOpen" class="fa fa-eye" style="display: none"></i>
+                            <i id="eyeClosed" class="fa fa-eye-slash"></i>
+                        </div>
+                    </span>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ingrese su contraseña"
+                        required
+                        minlength="6"
+                        maxlength="15"
+                        title="La contraseña debe tener entre 6 y 15 caracteres, incluyendo al menos una letra y un número"
+                        pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}"
+                    >
+                    <div class="error">
+                        <p class="error-required-message">La contraseña es obligatoria.</p>
+                        <p class="error-pattern-message">La contraseña debe tener entre 6 y 15 caracteres, incluyendo al menos una letra y un número.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Iniciar Sesión">
+            </div>
+        </form>
+        <h1>Formulario de Reserva de días</h1>
+        <form action="booking.php" method="get">
+            <div class="form-group">
+                <label for="days-booking">Días de Reserva:</label>
+                <input
+                    type="number"
+                    id="days-booking"
+                    name="days-booking"
+                    placeholder="Ingrese el número de días"
+                    min="1"
+                    required
+                >
+                <div class="error">
+                    <p class="error-required-message">El número de días es obligatorio.</p>
+                    <p class="error-pattern-message">Debe ingresar un número válido.</p>
+                    <p class="custom-error"></p>
+                </div>
+            </div>
+            <div class="form-group mt-60">
+                <label for="assessment">Valoración:</label>
+                <div class="range-container">
+                    <input
+                        type="range"
+                        id="assessment"
+                        name="assessment"
+                        min="0"
+                        max="10"
+                        required
+                        onchange="document.getElementById('rangeValue').textContent = this.value"
+                    >
+                    <span class="range-value" id="rangeValue"></span>
+                </div>
+                <div class="error">
+                    <p class="error-required-message">La valoración es obligatoria.</p>
+                    <p class="error-pattern-message">La valoración debe ser un número entre 0 y 10.</p>
+                    <p class="custom-error"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Reservar">
+            </div>
+        </form>
+        <h1>Formulario búsqueda</h1>
+        <form action="search.php" method="get">
+            <div class="form-group flex">
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    placeholder="Ingrese su búsqueda"
+                    pattern="[A-Za-z0-9\s]{1,50}"
+                >
+                <input id="searchSubmit" type="submit" value="Buscar">
+            </div>
+            <h2>Inserta tu fotografía</h2>
+            <div class="form-group">
+                <label for="photo">Selecciona una fotografía:</label>
+                <input
+                    type="file"
+                    id="photo"
+                    name="photo"
+                    accept="image/*"
+                    onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])"
+                >
+                <div class="image-preview">
+                    <img id="imagePreview" alt="" width="200">
+                </div>
+            </div>
+            <h2>Checkbox</h2>
+            <div class="form-group flex">
+                <fieldset class="checkbox-group">
+                    <legend>Condiciones de uso</legend>
+                    <div class="flex">
+                        <label for="terms">
+                            Acepto los términos y condiciones
+                        </label>
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                            value="termsAccepted"
+                        >
+                        <div class="error" style="margin-left: 15px;">
+                            <p class="error-required-message terms">Debe aceptar los términos y condiciones.</p>
+                            <p class="custom-error"></p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <label for="terms2">
+                            Acepto recibir comunicaciones comerciales
+                        </label>
+                        <input
+                            type="checkbox"
+                            id="terms2"
+                            name="terms2"
+                            required
+                            value="commercialCommunications"
+                        >
+                        <div class="error" style="margin-left: 15px;">
+                            <p class="error-required-message terms">Debe aceptar recibir comunicaciones comerciales.</p>
+                            <p class="custom-error"></p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <label for="terms3">
+                            Acepto la política de privacidad
+                        </label>
+                        <input
+                            type="checkbox"
+                            id="terms3"
+                            name="terms3"
+                            required
+                            value="privacyPolicy"
+                        >
+                        <div class="error" style="margin-left: 15px;">
+                            <p class="error-required-message terms">Debe aceptar la política de privacidad.</p>
+                            <p class="custom-error"></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <h2>Radio buttons</h2>
+            <div class="form-group">
+                <fieldset>
+                    <legend>Género</legend>
+                    <div class="flex">
+                        <label for="gender-male">
+                            <input
+                                type="radio"
+                                id="gender-male"
+                                name="gender"
+                                value="male"
+                                required
+                            >
+                            Masculino
+                        </label>
+                        <label for="gender-female">
+                            <input
+                                type="radio"
+                                id="gender-female"
+                                name="gender"
+                                value="female"
+                                required
+                            >
+                            Femenino
+                        </label>
+                        <div class="error">
+                            <p class="error-required-message">Debe seleccionar un género.</p>
+                            <p class="custom-error"></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <h2>Selector de país - Input select</h2>
+            <div class="form-group">
+                <label for="country">País:</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Seleccione su país</option>
+                    <option value="Spain">España</option>
+                    <option value="France">Francia</option>
+                    <option value="Germany">Alemania</option>
+                    <option value="Italy">Italia</option>
+                </select>
+                <div class="error">
+                    <p class="error-required-message">Debe seleccionar un país.</p>
+                    <p class="custom-error"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar Búsqueda">
+            </div>
+        </form>
+        <script src="https://kit.fontawesome.com/6fbdbd90cc.js" crossorigin="anonymous"></script>
+        <script>
+            // Script para alternar la visibilidad de la contraseña
+              const passwordInput = document.getElementById("password");
+              const togglePassword = document.getElementById("togglePassword");
+            const eyeOpen = document.getElementById("eyeOpen");
+            const eyeClosed = document.getElementById("eyeClosed");
 
-      <div class="form-group">
-        <input type="submit" value="Iniciar Sesión" />
-      </div>
-    </form>
-    <script
-      src="https://kit.fontawesome.com/6fbdbd90cc.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      const passwordInput = document.getElementById("password");
-      const togglePassword = document.getElementById("togglePassword");
-      const eyeOpen = document.getElementById("eyeOpen");
-      const eyeClosed = document.getElementById("eyeClosed");
+            togglePassword.addEventListener("click", function () {
+              const isPassword = passwordInput.type === "password";
+              passwordInput.type = isPassword ? "text" : "password";
+              eyeOpen.style.display = isPassword ? "inline" : "none";
+              eyeClosed.style.display = isPassword ? "none" : "inline";
+            });
 
-      togglePassword.addEventListener("click", function () {
-        const isPassword = passwordInput.type === "password";
-        passwordInput.type = isPassword ? "text" : "password";
-        eyeOpen.style.display = isPassword ? "inline" : "none";
-        eyeClosed.style.display = isPassword ? "none" : "inline";
-      });
-    </script>
-  </body>
+            // Validación de campos requeridos
+            const requiredFields = document.querySelectorAll(".form-group input[required], select");
+            requiredFields.forEach((field) => {
+              field.addEventListener("invalid", (event) => {
+                event.preventDefault();
+                const errorContainer = field.nextElementSibling;
+                if (field.validity.valueMissing) {
+                  errorContainer && (errorContainer.querySelector(".error-required-message").style.display = "block");
+                } 
+
+                if (field.validity.patternMismatch) {
+                  errorContainer && (errorContainer.querySelector(".error-pattern-message").style.display = "block");
+                } 
+              });
+            });
+
+            // Quitar errores cuando se escribe en el campo
+            requiredFields.forEach((field) => {
+              field.addEventListener("input", () => {
+                const errorContainer = field.nextElementSibling;
+                if (errorContainer.querySelector(".error-required-message")) {
+                  errorContainer.querySelector(".error-required-message").style.display = "none";
+                  
+                }
+                if (errorContainer.querySelector(".error-pattern-message")) {
+                  errorContainer.querySelector(".error-pattern-message").style.display = "none";
+                }
+                if (errorContainer.querySelector(".custom-error")) {
+                  errorContainer.querySelector(".custom-error").textContent = "";
+                }
+              });
+            });
+
+            // Validación número de días que tiene el mes actual
+            const bookingDaysInput = document.getElementById("days-booking");
+            const currentDate = new Date();
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            bookingDaysInput.addEventListener("input", () => {
+              if (bookingDaysInput.value > lastDayOfMonth) {
+                document.querySelector(".custom-error").textContent = `Este mes solo tiene ${lastDayOfMonth} días.`;
+              } else {
+                document.querySelector(".custom-error").textContent = "";
+              }
+            });
+        </script>
+    </body>
 </html>
